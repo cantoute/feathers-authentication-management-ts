@@ -24,9 +24,9 @@
       "call-signature"
     ],
     // Immutability rules
-    "readonly-keyword": true,
-    "readonly-array": true,
-    "no-let": false,
+    // "readonly-keyword": true,
+    // "readonly-array": true,
+    // "no-let": false,
     "no-object-mutation": true,
     "no-delete": true,
     "no-method-signature": true,
