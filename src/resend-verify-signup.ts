@@ -1,9 +1,11 @@
 import makeDebug from 'debug';
-import { ensureObjPropsValid } from './helpers';
-import { getLongToken } from './helpers';
-import { getShortToken } from './helpers';
-import { getUserData } from './helpers';
-import { notifier } from './helpers';
+import {
+  ensureObjPropsValid,
+  getUserData,
+  notifier,
+  getShortToken,
+  getLongToken
+} from './helpers';
 import { Types, Options, User, NotifierOptions } from './types';
 
 const debug = makeDebug('authLocalManagement:resendVerifySignup');

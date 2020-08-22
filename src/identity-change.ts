@@ -1,11 +1,7 @@
 import errors from '@feathersjs/errors';
 import makeDebug from 'debug';
 import { comparePasswords } from './helpers';
-import { ensureObjPropsValid } from './helpers';
-import { getLongToken } from './helpers';
-import { getShortToken } from './helpers';
-import { getUserData } from './helpers';
-import { notifier } from './helpers';
+import { ensureObjPropsValid, getLongToken, getShortToken, getUserData, notifier } from './helpers';
 import { Types, Options, User, Password } from './types';
 
 const debug = makeDebug('authLocalManagement:identityChange');

@@ -1,11 +1,13 @@
 import errors from '@feathersjs/errors';
 import makeDebug from 'debug';
-import { comparePasswords } from './helpers';
-import { ensureObjPropsValid } from './helpers';
-import { ensureValuesAreStrings } from './helpers';
-import { getUserData } from './helpers';
-import { hashPassword } from './helpers';
-import { notifier } from './helpers';
+import {
+  comparePasswords,
+  ensureObjPropsValid,
+  ensureValuesAreStrings,
+  getUserData,
+  hashPassword,
+  notifier
+} from './helpers';
 import { Types, Options, User, Password } from './types';
 
 const debug = makeDebug('authLocalManagement:passwordChange');

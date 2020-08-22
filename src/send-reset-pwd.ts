@@ -1,11 +1,13 @@
 import makeDebug from 'debug';
-import { concatIDAndHash } from './helpers';
-import { ensureObjPropsValid } from './helpers';
-import { getLongToken } from './helpers';
-import { getShortToken } from './helpers';
-import { getUserData } from './helpers';
-import { hashPassword } from './helpers';
-import { notifier } from './helpers';
+import {
+  concatIDAndHash,
+  ensureObjPropsValid,
+  getLongToken,
+  getShortToken,
+  getUserData,
+  hashPassword,
+  notifier
+} from './helpers';
 import { Types, Options, User, NotifierOptions } from './types';
 
 const debug = makeDebug('authLocalManagement:sendResetPwd');

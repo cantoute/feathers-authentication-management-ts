@@ -1,12 +1,13 @@
 import errors from '@feathersjs/errors';
 import { Params } from '@feathersjs/feathers';
 import makeDebug from 'debug';
-
-import { ensureObjPropsValid } from './helpers';
-import { ensureValuesAreStrings } from './helpers';
-import { getUserData } from './helpers';
-import { hashPassword } from './helpers';
-import { notifier } from './helpers';
+import {
+  ensureObjPropsValid,
+  ensureValuesAreStrings,
+  getUserData,
+  hashPassword,
+  notifier
+} from './helpers';
 import {
   Options,
   Tokens,
