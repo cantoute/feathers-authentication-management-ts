@@ -4,7 +4,7 @@ import {
   getUserData,
   notifier,
   getShortToken,
-  getLongToken
+  getLongToken,
 } from './helpers';
 import { Types, Options, User, NotifierOptions } from './types';
 

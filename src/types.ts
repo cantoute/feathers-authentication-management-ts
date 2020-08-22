@@ -99,7 +99,7 @@ export interface Options {
   /**
    * Prop names in user item which uniquely identify the user, e.g. ['username', 'email', 'cellphone']. The default is ['email']. The prop values must be strings. Only these props may be changed with verification by the service. At least one of these props must be provided whenever a short token is used, as the short token alone is too susceptible to brute force attack.
    */
-  identifyUserProps: string[]; //? keyof User!
+  identifyUserProps: string[]; // ? keyof User!
   /**
    * feathers application
    */

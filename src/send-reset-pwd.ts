@@ -6,7 +6,7 @@ import {
   getShortToken,
   getUserData,
   hashPassword,
-  notifier
+  notifier,
 } from './helpers';
 import { Types, Options, User, NotifierOptions } from './types';
 
@@ -30,7 +30,7 @@ export const sendResetPwd = async (
     options.skipIsVerifiedCheck ? [] : ['isVerified']
   );
 
-  const user2 = Object.assign(user1, {
+  const user2 = {...user1, 
     resetExpires: Date.now() + options.resetDelay,
     resetToken: concatIDAndHash(
       user1[usersServiceIdName],
@@ -39,8 +39,7 @@ export const sendResetPwd = async (
     resetShortToken: await getShortToken(
       options.shortTokenLen,
       options.shortTokenDigits
-    ),
-  });
+    )};
 
   notifier(options.notifier, Types.sendResetPwd, user2, notifierOptions);
   const user3 = await usersService.patch(user2[usersServiceIdName], {

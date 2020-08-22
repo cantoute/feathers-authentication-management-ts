@@ -6,7 +6,7 @@ import {
   ensureValuesAreStrings,
   getUserData,
   hashPassword,
-  notifier
+  notifier,
 } from './helpers';
 import {
   Options,
@@ -88,14 +88,13 @@ async function verifySignupSetPassword(
   ) => {
     const hashedPassword = await hashPassword(options.app, password, field);
 
-    const patchToUser = Object.assign({}, verifyChanges || {}, {
+    const patchToUser = {...(verifyChanges || {}), 
       isVerified,
       verifyToken: null,
       verifyShortToken: null,
       verifyExpires: null,
       verifyChanges: {},
-      password: hashedPassword,
-    });
+      password: hashedPassword};
 
     const result = await usersService.patch(
       user[usersServiceIdName],

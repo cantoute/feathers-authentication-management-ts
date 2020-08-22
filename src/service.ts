@@ -48,9 +48,8 @@ export default function authenticationLocalManagement(
   debug('service being configured.');
 
   return function (this: Application) {
-    const options: Options = Object.assign({}, optionsDefault, options1, {
-      app: this,
-    });
+    const options: Options = {...optionsDefault, ...options1, 
+      app: this};
     options.app.use(options.path, authLocalMgntMethods(options));
   };
 }

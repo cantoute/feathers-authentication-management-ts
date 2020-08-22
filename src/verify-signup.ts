@@ -4,7 +4,7 @@ import {
   ensureObjPropsValid,
   ensureValuesAreStrings,
   getUserData,
-  notifier
+  notifier,
 } from './helpers';
 import { Types, User, Options, Tokens, Token } from './types';
 import { Params } from '@feathersjs/feathers';
@@ -17,7 +17,7 @@ export const verifySignupWithLongToken = async (
 ) => {
   ensureValuesAreStrings(verifyToken);
 
-  return await verifySignup(options, { verifyToken }, { verifyToken });
+  return verifySignup(options, { verifyToken }, { verifyToken });
 };
 
 export const verifySignupWithShortToken = async (
@@ -28,7 +28,7 @@ export const verifySignupWithShortToken = async (
   ensureValuesAreStrings(verifyShortToken);
   ensureObjPropsValid(identifyUser, options.identifyUserProps);
 
-  return await verifySignup(options, identifyUser, { verifyShortToken });
+  return verifySignup(options, identifyUser, { verifyShortToken });
 };
 
 const verifySignup = async (
@@ -51,15 +51,14 @@ const verifySignup = async (
     isVerified: boolean,
     verifyChanges?: string[]
   ) => {
-    const patchToUser = Object.assign({}, verifyChanges || {}, {
+    const patchToUser = {...(verifyChanges || {}), 
       isVerified,
       verifyToken: null,
       verifyShortToken: null,
       verifyExpires: null,
-      verifyChanges: {},
-    });
+      verifyChanges: {}};
 
-    return await usersService.patch(user[usersServiceIdName], patchToUser, {});
+    return usersService.patch(user[usersServiceIdName], patchToUser, {});
   };
 
   if (!Object.keys(tokens).every((key) => tokens[key] === user1[key])) {

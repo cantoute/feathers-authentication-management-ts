@@ -6,7 +6,7 @@ import {
   ensureValuesAreStrings,
   getUserData,
   hashPassword,
-  notifier
+  notifier,
 } from './helpers';
 import { Types, Options, User, Password } from './types';
 
